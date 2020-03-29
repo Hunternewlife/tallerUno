@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Crear un script que muestre una palabra o frase ingresada al revés y que indique cuántas letras y espacios tiene. </h1>
+    </header>
+    <main>
+        <h2> De una palabra o una frase</h2>
+        <input type="text"  id="palabra">
+        <button onclick="main()"> generar </button>
+    </main>
+    <footer>
+        <h2 id="resultado" style="color: green;"></h2>
+        <h2 id="totalCtr" style="color: green;"></h2>
+        <h2 id="totalSpaces" style="color: green;"></h2>
+    </footer>
+</body>
+    <script>
+        //variables
+        //frase al reves
+        function reverse(){
+            var palabra = document.querySelector('#palabra').value;
+            var reves = String(palabra).split('').reverse().join('');
+            document.querySelector('#resultado').innerHTML = 'La palabra al reves es ' + reves; 
+        }
+        //conteo
+        function conteo(){
+            var palabra = document.querySelector('#palabra').value;
+            var palabraLengt = palabra.length;
+            var sinEspacios = palabra.replace(/ /g,'');
+            var sinEspacioslengt = palabraLengt -sinEspacios.length;
+            document.querySelector('#totalCtr').innerHTML = 'La palabra tiene ' + palabraLengt + ' letras'; 
+            document.querySelector('#totalSpaces').innerHTML = 'La palabra tiene ' + sinEspacioslengt + ' espacios'; 
+        }
+        //main
+        function main(){
+            reverse();
+            conteo();
+        }
+    </script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+        <h1>2. Crear un algoritmo en el cual el usuario tenga que adivinar un número. Este número lo
+            creará el sistema al azar. El usuario tiene solo 10 intentos y el sistema debe mostrar si el
+            usuario está cerca o lejos de dar con el número programado por el sistema.</h1>
+    </head>
+    <main> 
+        <h2> Instrucciones </h2>
+        <p> solo tienes 10 intentos recuerda que el numero es de 1-50</p>
+        <h2> de su seleccion </h2>
+        <input type="number" id="numeroDado">
+    </main>
+    <button id="btn" onclick="main()"> Intentar </button>
+    <h1 id="resultado" style="font-size: 2em; color: red;"></h1>
+</body>
+<script>
+    //generar numero random 
+    var numeroRandom = Math.round(Math.random()*50);
+    console.log(numeroRandom);
+    //contador de intentos
+    var intentos = 0;
+    var resultado = document.querySelector('#resultado');
+    //
+    function intento(){        
+        intentos += 1;
+        if(intentos >=10){
+            alert("Perdiste el numero era "+ numeroRandom);
+        }
+    }
+
+    function adivinar(){
+        var numeroDado = document.querySelector('#numeroDado').value;
+        if(numeroRandom == numeroDado){
+            resultado.style.color = 'green';
+            resultado.innerHTML = '!!!you did it!!!';
+        } else if(numeroDado > numeroRandom){            
+            resultado.innerHTML = 'mucho';
+        } else if(numeroDado < numeroRandom){
+            resultado.innerHTML = 'muy poco';
+        } else {}   
+    }
+    //main function
+
+    function main(){
+        intento();
+        adivinar();
+    }
+
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+<body>
+   <header>
+       <h1>
+        Pepe desea saber cuál será su calificación final en la materia de Lógica de Programación y
+        Algoritmos. Dicha calificación se compone de los siguientes porcentajes:
+        - 55% promedio de tres parciales
+        - 30% Examen Final
+        - 15% Trabajo final        
+       </h1>
+   </header>
+   <main>
+       <h2>Por favor introdusca sus notas recuerde de 0 a 5 cada nota</h2>
+       <h3 >Promdeio de parciales</h3>
+       <input id="promParciales" type="number" min="0" max="5">
+       <h3 >Examen Final</h3>
+       <input id="finalExam" type="number" min="0" max="5">
+       <h3 >Trabajo Final</h3>
+       <input id="tesis" type="number" min="0" max="5">
+   </main>
+   <footer>
+       <button style="margin: 15px;" onclick="darcalculo()"> Generar calificacion final</button>
+       <h2 style="font-size: 2em;" id="calificacion"></h2>
+   </footer>
+</body>
+<script>
+    
+
+    function darcalculo(){
+        var promParciales = document.querySelector('#promParciales').value;
+        var finalExam = document.querySelector('#finalExam').value;
+        var tesis = document.querySelector('#tesis').value;
+        
+        if(promParciales == "" || finalExam == "" || tesis == ""){
+            alert('por favor llena todos los datos')
+        } else{
+            var promParciales = document.querySelector('#promParciales').value;
+            var finalExam = document.querySelector('#finalExam').value;
+            var tesis = document.querySelector('#tesis').value;
+/*
+            var notaUno = (2.75*promParciales)/5;
+            var notaDos = (1.5*finalExam)/5;
+            var notaTres = (0.75*tesis)/5;
+*/
+            var notaFinal = ((2.75*promParciales)/5)+((1.5*finalExam)/5)+((0.75*tesis)/5);
+
+            document.querySelector('#calificacion').innerHTML = notaFinal;
+        }
+        
+        
+    }
+
+</script>
+</html>

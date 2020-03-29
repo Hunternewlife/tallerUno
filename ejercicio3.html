@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Crear un algoritmo que pida x cantidad de números e indique el porcentaje de números pares y el porcentaje de números impares
+        </h1>
+    </header>
+    <main>
+        
+    </main>
+</body>
+<script>
+    var datos = prompt("cuantos datos desea ingresar");
+
+    while(isNaN(datos)){
+        alert('Por favor de un numero')
+        var datos = prompt("cuantos datos desea ingresar");
+    }
+ 
+    var numero = Number(datos);
+    let pares = [];
+    let inpares = [];
+    for(let i = 0; i<datos;i++){
+        var info = prompt('Diga un numero '+ (i+1));
+        var infoNumber = Number(info);
+        if((infoNumber % 2) === 0){
+            pares.push(infoNumber)
+        } else {
+            inpares.push(infoNumber)
+        }
+    }
+
+    document.write('su resultado esta en la consola');
+
+    var cuentaPares = 0;
+      
+    for(let i=0; i<pares.length; i++){
+        cuentaPares += pares[i];     
+    }
+
+    var cuentaInpares = 0;
+      
+      for(let i=0; i<inpares.length; i++){
+          cuentaInpares += inpares[i];     
+      }
+
+    var porcentajePares = cuentaPares/pares.length;
+    var porcentajeInpares = cuentaInpares/inpares.length;
+
+    console.log("Porcentaje de los numeros pares es " + Math.round(porcentajePares));
+    console.log("Porcentaje de los numeros inpares es " + Math.round(porcentajeInpares));
+    console.log("Los numeros pares son " + pares);
+    console.log("Los numeros inpares son " + inpares);
+
+</script>
+
+</html>

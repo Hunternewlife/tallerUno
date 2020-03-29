@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Realiza un script que pida un texto e indique si es un palíndromo en un alert. Ejemplo de palíndromo: “amor a roma”. </h1>
+    </header>
+    <main>
+        <h2>por favor escribe la palabra o frase que quieres verificar</h2>
+        <input id="palabra" type="text" name="">
+        <button onclick="isPalindrome()"> Verificar </button>
+        <h2 id="resultado"></h2>
+    </main>
+</body>
+    <script>
+
+
+
+        function isPalindrome() {
+            var line = document.querySelector('#palabra').value;
+            var reverseLine = String(line).split('').reverse().join('');
+            console.log(line);
+            console.log(reverseLine);
+            if(String(line) == reverseLine){
+                document.querySelector('#resultado').style.color = 'green';
+                document.querySelector('#resultado').innerHTML = 'Es palindromo';
+            } else {
+                document.querySelector('#resultado').innerHTML = 'No es palindromo';
+            }
+           }
+
+    </script>
+</html>
